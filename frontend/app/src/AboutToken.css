@@ -18,7 +18,7 @@ input[type="number"] {
   flex-direction: column;
   align-items: center;
   align-content: space-around;
-  row-gap: 140px;
+  row-gap: 100px;
 }
 .containerAbout h1 {
   color: white;
@@ -28,4 +28,18 @@ input[type="number"] {
 .networkId {
   color: white;
   padding-bottom: 10px;
+}
+.wrongNetwork,
+.noMetamask {
+  display: flex;
+  height: 100vh;
+  font-size: 56px;
+  text-align: center;
+  background: rebeccapurple;
+  color: white;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: center;
+  align-items: center;
 }

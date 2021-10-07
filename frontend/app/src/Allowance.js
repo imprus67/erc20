@@ -22,47 +22,46 @@ export default () => {
 
 
   return (
-    <div className='Allowance'>
-
+    <div  id="Allowance">
       <div className='Container_wrapper'>
 
-          <div className = 'Form_wrapper'>
+        <div className = 'Form_wrapper'>
 
+          
+
+        <form className='form' onSubmit={handleSubmit(submitAllowance)}>
+
+          <h2 className='form_title'>Allowance</h2>
         
+          <input  className='form_input' type="text" placeholder="Address of owner" 
+          {...register("addressOfOwner", 
+          {required: 'Not empty field',
+          pattern: {
+            value: /^0x[a-fA-F0-9]{40}$/g,
+            message: 'Should be address'
+          }})} value={addressOwner} onChange={(e) => {setAdressOwner(e.target.value)}}/>
 
-      <form className='form' onSubmit={handleSubmit(submitAllowance)}>
-
-        <h2 className='form_title'>Allowance</h2>
-      
-        <input  className='form_input' type="text" placeholder="Address of owner" 
-        {...register("addressOfOwner", 
-        {required: 'Not empty field',
-        pattern: {
-          value: /^0x[a-fA-F0-9]{40}$/g,
-          message: 'Should be address'
-        }})} value={addressOwner} onChange={(e) => {setAdressOwner(e.target.value)}}/>
-
-        {errors.addressOfOwner && <span>{errors.addressOfOwner.message}</span>}
-      
-      <input className='form_input' type="text" placeholder="Address of spender" 
-        {...register("addressOfSpender", 
-        {required: 'Not empty field',
-        pattern: {
-          value: /^0x[a-fA-F0-9]{40}$/g,
-          message: 'Should be address'
-        }})} value={addressSpender} onChange={(e) => {setAdressSpender(e.target.value)}}/>
+          {errors.addressOfOwner && <span>{errors.addressOfOwner.message}</span>}
         
-        {errors.addressOfSpender && <span>{errors.addressOfSpender.message}</span>}
-        
-        <button className='form_button' type="submit">submit</button>
+        <input className='form_input' type="text" placeholder="Address of spender" 
+          {...register("addressOfSpender", 
+          {required: 'Not empty field',
+          pattern: {
+            value: /^0x[a-fA-F0-9]{40}$/g,
+            message: 'Should be address'
+          }})} value={addressSpender} onChange={(e) => {setAdressSpender(e.target.value)}}/>
+          
+          {errors.addressOfSpender && <span>{errors.addressOfSpender.message}</span>}
+          
+          <button className='form_button' type="submit">submit</button>
 
-    </form>
+      </form>
 
-      </div>
+        </div>
 
-      <div className = 'Text_wrapper'>
+        <div className = 'Text_wrapper'>
         <h2>Allowance description</h2>
-        <p>Allowance: returns a set number of tokens from a spender to the owner</p>
+        <p>Returns the remaining number of tokens that spender will be allowed to spend on behalf of owner through transferFrom. This is zero by default.</p>
         <p>Result: {result}</p>
       </div>
       </div>

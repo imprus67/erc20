@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import { ReactComponent as LogoSvg } from './assets/bit_logo.svg';
 import './Header.css';
 import {TOKEN_SYMBOL, NAME_OF_COIN} from './utils/const';
-import { Container, Row, Col } from 'react-bootstrap';
-
+import {Scroll} from './utils/scroll';
 
 const Header = () => {
+
+    Scroll();
 
   const [offset, setOffset] = useState(0);
 
@@ -17,11 +18,11 @@ const Header = () => {
 
     return (
         <header className={offset>60 ? 'header_white' : 'common'}>
-        <Container fluid>
-            <Row>
-                <Col xl={12}>
+        <div>
+            <div>
+                <div>
                     <div className={'header__content'}>
-                        <a className='Logo'>
+                        <a href="#about" className='Logo'>
                             <LogoSvg />
                         </a>
                         <span className={offset>60 ? 'header_span__white' : 'header__span'}> Buy Coin <br/> {NAME_OF_COIN}</span>
@@ -43,9 +44,9 @@ const Header = () => {
                             </li>
                         </ul>
                     </div>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
         </header>
     )
 }

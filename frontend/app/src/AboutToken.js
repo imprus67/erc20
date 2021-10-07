@@ -1,22 +1,25 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import {noMetamask} from './utils/web3';
 import './AboutToken.css';
 import Header from './Header';
 import ProgressBar from './ProgressBar';
 import {TOKEN_SYMBOL} from './utils/const';
 
 
-
-
 const AboutToken = () => {
 
-
+    
     const symbol = useSelector(state => state.symbol);
+    const account = useSelector(state => state.account);
     const balanceOfToken = useSelector(state => state.balanceOfToken);
     const networkId = useSelector(state => state.networkId);
     const percentage = balanceOfToken;
 
-    if (networkId) {
+    if (noMetamask) {
+        return <div className='noMetamask'>No metamask installed. Please install metamask.</div>
+    }
+    else if (networkId) {
     return (
         <>
         <Header />
@@ -33,7 +36,9 @@ const AboutToken = () => {
                 striped
                 animated/>
             </div>
-
+            <div className={'networkId'}>
+                Your current account is: {account}
+            </div>
             <div className={'networkId'}>
                 Current networ id is: {networkId}
             </div>
@@ -44,7 +49,7 @@ const AboutToken = () => {
     } else {
         return (
             <>
-                <div>Please, use local network</div>
+                <div className='wrongNetwork'>Please, use local network</div>
             </>
         )
 

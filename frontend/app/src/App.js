@@ -10,6 +10,7 @@ import Transfer from './Transfer';
 import TransferFrom from './TransferFrom';
 import Approve from './Approve';
 import BalanceOfAddress from './BalanceOfAddress';
+import {ADDRESS_OF_CREATOR} from './utils/const';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,9 +19,9 @@ function App() {
 
      const init = async() => {
         const web3 = await getWeb3();
-        const account = await web3.eth.getAccounts();
+        await window.ethereum.enable();
+        const account = await web3.eth.requestAccounts();
         const networkId = await web3.eth.net.getId();
-
         const deployedNetwork = ERC20Token.networks[networkId];
 
         if (deployedNetwork !== undefined) {
@@ -30,7 +31,7 @@ function App() {
         );
         
 
-        const balance = await contract.methods.totalSupply().call();
+        const balance = await contract.methods.balanceOf(ADDRESS_OF_CREATOR).call();
         const symbol = await contract.methods.symbol().call();
 
         dispatch({type: 'SET_SYMBOL', payload: symbol})

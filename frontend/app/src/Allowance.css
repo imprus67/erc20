@@ -1,4 +1,18 @@
-.Allowance {
+@media (max-width: 900px) {
+  .Container_wrapper {
+    display: flex;
+    flex-direction: column !important;
+    padding: 40px 0 !important;
+    box-sizing: border-box !important;
+    justify-content: none !important;
+    height: 100% !important;
+    overflow: hidden;
+    align-items: center !important;
+    width: 100% !important;
+  }
+}
+
+#Allowance {
   height: 100vh;
   background-image: linear-gradient(90deg, #647dee 0%, #a754e2 100%);
 }
@@ -19,12 +33,17 @@
   flex-direction: column;
   row-gap: 30px;
   height: 50vh;
-  width: 30vw;
+  width: 50vw;
   align-content: space-around;
   justify-content: space-around;
 }
 .Text_wrapper {
   color: #e4e4e4;
+  padding: 40px;
+}
+.Text_wrapper p {
+  line-height: 30px;
+  font-size: 20px;
 }
 
 .form {

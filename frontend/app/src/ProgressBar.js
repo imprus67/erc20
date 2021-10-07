@@ -18,7 +18,7 @@ const getBarClasses = (props) => {
 const changeDivWidth = (progressBarRef, percentage) => {
 	const progressBar = progressBarRef.current;
 	if (!progressBar) return;
-	progressBar.style.width = `${percentage}%`;
+	progressBar.style.width = `${percentage/10000000000000000}%`;
 };
 
 const ProgressBar = (props) => {
