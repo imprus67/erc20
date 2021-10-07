@@ -1,0 +1,123 @@
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background-color: transparent;
+}
+header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 0;
+  background-color: transparent;
+  transition: 0.4s ease;
+  pointer-events: none;
+  box-shadow: none;
+}
+.header_white {
+  opacity: 1;
+  background-color: white;
+  transition: 0.5s opacity, 0.55s visibility;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+ul.header__nav,
+ul.header_nav_white {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  width: auto;
+  list-style: none;
+  row-gap: 20px;
+  column-gap: 20px;
+  flex: 5;
+}
+a.Logo {
+  flex: 2;
+}
+
+span.header__span {
+  flex: 2 1;
+  color: white;
+  text-align: left;
+  font-family: "Jura", sans-serif;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+span.header_span__white {
+  flex: 2 1;
+  color: black;
+  text-align: left;
+  font-family: "Jura", sans-serif;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.header__nav li {
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin-right: 44px;
+  margin-bottom: 0;
+}
+
+.header_nav_white li {
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin-right: 44px;
+  margin-bottom: 0;
+}
+
+.header__nav a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+}
+.header_nav_white a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+}
+
+.header__nav a:hover {
+  text-shadow: 2px 1px 5px white;
+}
