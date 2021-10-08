@@ -1,4 +1,7 @@
 @media (max-width: 900px) {
+  .containerAbout {
+    row-gap: 50px !important;
+  }
   .Container_wrapper {
     display: flex;
     flex-direction: column !important;
@@ -9,6 +12,19 @@
     overflow: hidden;
     align-items: center !important;
     width: 100% !important;
+  }
+  span > h3 {
+    margin: 0 !important;
+  }
+  #Approve,
+  #Allowance,
+  #Transfer,
+  #TransferFrom,
+  #BalanceOfAddress {
+    height: 100% !important;
+  }
+  .form {
+    row-gap: 10px !important;
   }
 }
 
@@ -26,6 +42,7 @@
   height: 100vh;
   max-width: 1150px;
   margin: 0 auto;
+  padding: 20px;
 }
 .Form_wrapper {
   align-items: center;

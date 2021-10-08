@@ -6,20 +6,7 @@ header {
   z-index: 9;
   background-color: transparent;
 }
-header::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  display: block;
-  width: 100%;
-  left: 0;
-  top: 0;
-  height: 0;
-  background-color: transparent;
-  transition: 0.4s ease;
-  pointer-events: none;
-  box-shadow: none;
-}
+
 .header_white {
   opacity: 1;
   background-color: white;
@@ -51,8 +38,8 @@ ul.header_nav_white {
   right: auto;
   width: auto;
   list-style: none;
-  row-gap: 20px;
-  column-gap: 20px;
+  /* row-gap: 20px;
+  column-gap: 20px; */
   flex: 5;
 }
 a.Logo {
@@ -100,7 +87,7 @@ span.header_span__white {
   align-items: center;
   height: 40px;
   color: #fff;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   text-transform: none;
   text-decoration: none;
@@ -112,7 +99,7 @@ span.header_span__white {
   align-items: center;
   height: 40px;
   color: black;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
   text-transform: none;
   text-decoration: none;
@@ -120,4 +107,49 @@ span.header_span__white {
 
 .header__nav a:hover {
   text-shadow: 2px 1px 5px white;
+}
+
+@media (max-width: 900px) {
+  header {
+    display: none;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    z-index: 50;
+  }
+  .burger-btn {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  .burger-btn span {
+    position: absolute;
+    top: 13px;
+    width: 40px;
+    height: 5px;
+    background-color: white;
+  }
+  .burger-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 5px;
+    background-color: white;
+  }
+  .burger-btn::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 5px;
+    background-color: white;
+  }
 }

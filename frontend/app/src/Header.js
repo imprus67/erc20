@@ -3,8 +3,11 @@ import { ReactComponent as LogoSvg } from './assets/bit_logo.svg';
 import './Header.css';
 import {TOKEN_SYMBOL, NAME_OF_COIN} from './utils/const';
 import {Scroll} from './utils/scroll';
+import Menu from './Menu';
 
 const Header = () => {
+
+    const [menuActive, setMenuActive] = useState(false);
 
     Scroll();
 
@@ -17,6 +20,7 @@ const Header = () => {
   }, []);
 
     return (
+        <>
         <header className={offset>60 ? 'header_white' : 'common'}>
         <div>
             <div>
@@ -48,7 +52,15 @@ const Header = () => {
             </div>
         </div>
         </header>
+        <nav>
+            <div onClick={() => setMenuActive(!menuActive)} className='burger-btn'>
+                <span/>
+            </div>
+        </nav>
+        <Menu active={menuActive} setActive={setMenuActive}/>
+        </>
     )
 }
 
 export default Header
+
