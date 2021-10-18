@@ -1,5 +1,8 @@
 const path = require("path");
+<<<<<<< HEAD
 const HDWalletProvider = require("truffle-hdwallet-provider");
+=======
+>>>>>>> 3c53c86585b27eac1902d22c71a1f9db9fea6ada
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -9,6 +12,7 @@ module.exports = {
     solc: {
       version: '0.8.3'
     }
+<<<<<<< HEAD
   },
   networks: {
     ropsten:{
@@ -23,4 +27,7 @@ module.exports = {
   }
   },
 
+=======
+  }
+>>>>>>> 3c53c86585b27eac1902d22c71a1f9db9fea6ada
 };
